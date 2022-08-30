@@ -1,4 +1,5 @@
-# redemobilidadeperiferias.github.io
+<img align="right" src="https://user-images.githubusercontent.com/111389624/187542106-bf0a770e-437c-4f6f-a79f-d1da1d5fd9f5.png" width="150">
+<h1>redemobilidadeperiferias.github.io</h1>
 <h1>Rede Mobilidade Periferias 📚🚌🚲🚶🌎</h1>
 <h3>Grupo de pesquisa-ensino-extensão</h3>
 <br>
