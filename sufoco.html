@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Redemopes</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
+
 <body>
     <nav>
         <ul>
@@ -17,172 +19,93 @@
                 <a href="projetos.html">Projetos</a>
                 <ul>
                     <li><a href="extensao.html">Extensão</a></li>
-                    <li></li><a href="">Grupo de estudos</a></li>
-                    <li></li><a href="">Podcast Ponto de Partida</a></li>
-                    <li></li><a href="">App Sufoco</a></li>
-                </ul>
+                    <li></li><a href="">Grupo de estudos</a>
             </li>
-            <li>
-                <a href="pesquisas.html">Pesquisas</a>
-                <ul>
-                    <li><a href="">Linhas de pesquisa</a></li>
-                    <li><a href="">Publicações</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="blog.html">Blog</a>
-            </li>
-            <li>
-                <a href="equipe.html">Equipe</a>
-            </li>
-            <li>
-                <a href="contato.html">Contato</a>
-            </li>
+            <li></li><a href="">Podcast Ponto de Partida</a></li>
+            <li></li><a href="">App Sufoco</a></li>
+        </ul>
+        </li>
+        <li>
+            <a href="pesquisas.html">Pesquisas</a>
+            <ul>
+                <li><a href="">Linhas de pesquisa</a></li>
+                <li><a href="">Publicações</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="blog.html">Blog</a>
+        </li>
+        <li>
+            <a href="equipe.html">Equipe</a>
+        </li>
+        <li>
+            <a href="contato.html">Contato</a>
+        </li>
         </ul>
 
     </nav>
     <header>
         <img src="./imag/Sufoco_capa.png">
-        
+
         <h1>
             app sufoco: lotação nos transportes coletivos da rmsp
         </h1>
         <hr>
         <p>
-        O mapeamento colaborativo sufoco: lotação nos transportes coletivos na RMSP é parte das ações do grupo de pesquisa-ensino-extensão Rede Mobilidade Periferias, Instituto das Cidades, Campus Zona Leste, Unifesp. 
-                                                  
+            O mapeamento colaborativo sufoco: lotação nos transportes coletivos na RMSP é parte das ações do grupo de
+            pesquisa-ensino-extensão Rede Mobilidade Periferias, Instituto das Cidades, Campus Zona Leste, Unifesp.
+
         </p>
         <h3>
             <b style="color:red">
                 O que queremos?
             </b>
-            
+
         </h3>
         <p>
-        A proposta deste projeto é o <b style="color:red">mapeamento colaborativo digital a partir dos alertas das pessoas em situações de lotação nos transportes coletivos na região metropolitana de São Paulo (RMSP)</b>, que é um problema histórico enfrentado pelas pessoas em sua mobilidade cotidiana, mas vem se agravando neste contexto de pandemia do coronavírus.
+            A proposta deste projeto é o <b style="color:red">mapeamento colaborativo digital a partir dos alertas das
+                pessoas em situações de lotação nos transportes coletivos na região metropolitana de São Paulo
+                (RMSP)</b>, que é um problema histórico enfrentado pelas pessoas em sua mobilidade cotidiana, mas vem se
+            agravando neste contexto de pandemia do coronavírus.
         </p>
         <h3>
             <b style="color:red">
                 Como faremos?
             </b>
-            
+
         </h3>
         <p>
-        Os alertas de lotação enviados pelas pessoas nos transportes coletivos na RMSP serão inseridos neste link do <a style="color:blue" href="https://play.google.com/store/apps/details?id=br.com.mapeamentosufoco.app" target="_blank" rel="noopener noreferrer">App Sufoco: lotação nos transportes</a> e no site do projeto <a style="color:blue" href="https://www.mapeamentosufoco.com.br/" target="_blank" rel="noopener noreferrer">Mapeamento Colaborativo Sufoco.</a></p>
+            Os alertas de lotação enviados pelas pessoas nos transportes coletivos na RMSP serão inseridos neste link do
+            <a style="color:blue" href="https://play.google.com/store/apps/details?id=br.com.mapeamentosufoco.app"
+                target="_blank" rel="noopener noreferrer">App Sufoco: lotação nos transportes</a> e no site do projeto
+            <a style="color:blue" href="https://www.mapeamentosufoco.com.br/" target="_blank"
+                rel="noopener noreferrer">Mapeamento Colaborativo Sufoco.</a>
+        </p>
         <h3>
             <b style="color:red">
                 O que esperamos gerar?
             </b>
         </h3>
         <p>
-            A equipe do projeto divulgará os resultados parciais e finais neste site, bem como, nos meios de comunicação e/ou aos órgãos públicos responsáveis. As informações dos participantes serão mantidas em anonimato.
+            A equipe do projeto divulgará os resultados parciais e finais neste site, bem como, nos meios de comunicação
+            e/ou aos órgãos públicos responsáveis. As informações dos participantes serão mantidas em anonimato.
 
         </p>
 
         <div id="map"></div>
 
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgD8vO518VQrPXCbvaEDSCaLWQya5HAO8&callback=initMap&libraries=&v=weekly"
-      defer
-    ></script>
-    <style type="text/css">
-      /* Always set the map height explicitly to define the size of the div
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgD8vO518VQrPXCbvaEDSCaLWQya5HAO8&callback=initMap&libraries=&v=weekly"
+            defer></script>
+        <style type="text/css">
+            /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-
-      /* Optional: Makes the sample page fill the window. */
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-    <script>
-      let map;
-
-      function initMap() {
-        map = new google.maps.Map(document.getElementById("map"), {
-          center: { lat: -23.55958133, lng: -46.63593292 },
-          zoom: 11,
-        });
-
-        console.log("aa")
-        userAction()
-        
-      }
-
-      const userAction = async () => {
-  			
-
-  		fetch("https://674e5ufk78.execute-api.us-east-1.amazonaws.com/prod/report", {
-            method: 'GET',
-            mode: "cors"
-        }).then(function (response) {
-            return response.json();
-        }).then(data => {
-        	for (let i = 0; i < data.reports.length; i++) {
-        		const contentString = `<div id="content">${data.reports[i].travelCategory}</div><div id="content">${data.reports[i].travelLine} - ${data.reports[i].travelDate}  - ${data.reports[i].travelStatus}</div>`
-        	const infowindow = new google.maps.InfoWindow({
-          		content: contentString,
-	        });
-
-        		let latlong = data.reports[i].userLocation.split(",")
-        		let latitude = parseFloat(latlong[0])
-	            let longitude = parseFloat(latlong[1])
-
-        		let marker
-        		console.log(data.reports[i].travelCategory)
-
-        		if (data.reports[i].travelCategory == "Trem CPTM") {
-                marker = new google.maps.Marker({
-          			position: { lat: latitude, lng: longitude },
-          			map,
-          			icon: pinSymbol('#c6f861'),
-          			animation: google.maps.Animation.DROP,
-          			title: data.reports[i].travelCategory,
-        		});
-            } else if (data.reports[i].travelCategory == "Metrô") {
-                marker = new google.maps.Marker({
-          			position: { lat: latitude, lng: longitude },
-          			map,
-          			icon: pinSymbol('red'),
-          			animation: google.maps.Animation.DROP,
-          			title: data.reports[i].travelCategory,
-        		});
-            } else {
-            	marker = new google.maps.Marker({
-          			position: { lat: latitude, lng: longitude },
-          			map,
-          			icon: pinSymbol('#8048dd'),
-          			animation: google.maps.Animation.DROP,
-          			title: data.reports[i].travelCategory,
-        		});
+            #map {
+                width: 100%;
+                height: 500px;
             }
-        		marker.addListener("click", () => {
-          			infowindow.open(map, marker);
-        		});
-        	}
-        }).catch(err => {
-            console.error('Failed retrieving information', err);
-        });
-		}
+        </style>
 
-		function pinSymbol(color) {
-    return {
-        path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z',
-        fillColor: color,
-        fillOpacity: 1,
-        strokeColor: '#000',
-        strokeWeight: 1,
-        scale: 1,
-        labelOrigin: new google.maps.Point(0,-29)
-    };
-}
-    </script>
-        <p style="text-align:right">MAPA EM REESTRUTURAÇÃO</p>
         <h3>
             Equipe do projeto
         </h3>
@@ -196,14 +119,16 @@
         <br>
         <br>
 
-Para maiores informações acesse o site do projeto
-<br>
-<a style="color:blue" href="https://www.mapeamentosufoco.com.br" target="_blank" rel="noopener noreferrer">www.mapeamentosufoco.com.br</a>
-<br>
-Para baixar gratuitamente o App Sufoco: lotação nos transportes na RMSP
-<br>
-<a style="color:blue" href="https://play.google.com/store/apps/details?id=br.com.mapeamentosufoco.app" target="_blank" rel="noopener noreferrer">https://play.google.com/store/apps</a>
-<br>
+        Para maiores informações acesse o site do projeto
+        <br>
+        <a style="color:blue" href="https://www.mapeamentosufoco.com.br" target="_blank"
+            rel="noopener noreferrer">www.mapeamentosufoco.com.br</a>
+        <br>
+        Para baixar gratuitamente o App Sufoco: lotação nos transportes na RMSP
+        <br>
+        <a style="color:blue" href="https://play.google.com/store/apps/details?id=br.com.mapeamentosufoco.app"
+            target="_blank" rel="noopener noreferrer">https://play.google.com/store/apps</a>
+        <br>
 
         <br>
         <br>
@@ -216,23 +141,105 @@ Para baixar gratuitamente o App Sufoco: lotação nos transportes na RMSP
 
     </header>
 
-<footer img>
-    <img src="./imag/logo_transp_ufp.png">
-</footer>
+    <footer img>
+        <img src="./imag/logo_transp_ufp.png">
+    </footer>
 
-<footer>
-    <p>
-        <small>Instituto das Cidades, Campus Zona Leste
-        <br>
-        Universidade Federal de São Paulo (Unifesp)
-        <br>
-        Grupo de Pesquisa-Ensino-Extensão Rede Mobilidade Periferia
-        </small>
-    </p>
-        
+    <footer>
+        <p>
+            <small>Instituto das Cidades, Campus Zona Leste
+                <br>
+                Universidade Federal de São Paulo (Unifesp)
+                <br>
+                Grupo de Pesquisa-Ensino-Extensão Rede Mobilidade Periferia
+            </small>
+        </p>
 
-</footer>
 
-    
+    </footer>
+
+    <script>
+        let map;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: -23.55958133, lng: -46.63593292 },
+                zoom: 11,
+            });
+
+            console.log("aa")
+            userAction()
+
+        }
+
+        const userAction = async () => {
+
+
+            fetch("https://674e5ufk78.execute-api.us-east-1.amazonaws.com/prod/report", {
+                method: 'GET',
+                mode: "cors"
+            }).then(function (response) {
+                return response.json();
+            }).then(data => {
+                for (let i = 0; i < data.reports.length; i++) {
+                    const contentString = `<div id="content">${data.reports[i].travelCategory}</div><div id="content">${data.reports[i].travelLine} - ${data.reports[i].travelDate}  - ${data.reports[i].travelStatus}</div>`
+                    const infowindow = new google.maps.InfoWindow({
+                        content: contentString,
+                    });
+
+                    let latlong = data.reports[i].userLocation.split(",")
+                    let latitude = parseFloat(latlong[0])
+                    let longitude = parseFloat(latlong[1])
+
+                    let marker
+                    console.log(data.reports[i].travelCategory)
+
+                    if (data.reports[i].travelCategory == "Trem CPTM") {
+                        marker = new google.maps.Marker({
+                            position: { lat: latitude, lng: longitude },
+                            map,
+                            icon: pinSymbol('#c6f861'),
+                            animation: google.maps.Animation.DROP,
+                            title: data.reports[i].travelCategory,
+                        });
+                    } else if (data.reports[i].travelCategory == "Metrô") {
+                        marker = new google.maps.Marker({
+                            position: { lat: latitude, lng: longitude },
+                            map,
+                            icon: pinSymbol('red'),
+                            animation: google.maps.Animation.DROP,
+                            title: data.reports[i].travelCategory,
+                        });
+                    } else {
+                        marker = new google.maps.Marker({
+                            position: { lat: latitude, lng: longitude },
+                            map,
+                            icon: pinSymbol('#8048dd'),
+                            animation: google.maps.Animation.DROP,
+                            title: data.reports[i].travelCategory,
+                        });
+                    }
+                    marker.addListener("click", () => {
+                        infowindow.open(map, marker);
+                    });
+                }
+            }).catch(err => {
+                console.error('Failed retrieving information', err);
+            });
+        }
+
+        function pinSymbol(color) {
+            return {
+                path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z',
+                fillColor: color,
+                fillOpacity: 1,
+                strokeColor: '#000',
+                strokeWeight: 1,
+                scale: 1,
+                labelOrigin: new google.maps.Point(0, -29)
+            };
+        }
+    </script>
 </body>
+
 </html>
