@@ -79,7 +79,109 @@
 
         </p>
 
-        <iframe style="width: 100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.6977120248625!2d-46.44669218554259!3d-23.579297868138827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce660b6f5b0291%3A0x6f1f8874ec67f3fd!2sUnifesp%20-%20Campus%20Zona%20Leste%20-%20Instituto%20das%20Cidades!5e0!3m2!1spt-BR!2sbr!4v1661860717471!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div id="map"></div>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgD8vO518VQrPXCbvaEDSCaLWQya5HAO8&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+      let map;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: -23.55958133, lng: -46.63593292 },
+          zoom: 11,
+        });
+
+        console.log("aa")
+        userAction()
+        
+      }
+
+      const userAction = async () => {
+  			
+
+  		fetch("https://674e5ufk78.execute-api.us-east-1.amazonaws.com/prod/report", {
+            method: 'GET',
+            mode: "cors"
+        }).then(function (response) {
+            return response.json();
+        }).then(data => {
+        	for (let i = 0; i < data.reports.length; i++) {
+        		const contentString = `<div id="content">${data.reports[i].travelCategory}</div><div id="content">${data.reports[i].travelLine} - ${data.reports[i].travelDate}  - ${data.reports[i].travelStatus}</div>`
+        	const infowindow = new google.maps.InfoWindow({
+          		content: contentString,
+	        });
+
+        		let latlong = data.reports[i].userLocation.split(",")
+        		let latitude = parseFloat(latlong[0])
+	            let longitude = parseFloat(latlong[1])
+
+        		let marker
+        		console.log(data.reports[i].travelCategory)
+
+        		if (data.reports[i].travelCategory == "Trem CPTM") {
+                marker = new google.maps.Marker({
+          			position: { lat: latitude, lng: longitude },
+          			map,
+          			icon: pinSymbol('#c6f861'),
+          			animation: google.maps.Animation.DROP,
+          			title: data.reports[i].travelCategory,
+        		});
+            } else if (data.reports[i].travelCategory == "Metrô") {
+                marker = new google.maps.Marker({
+          			position: { lat: latitude, lng: longitude },
+          			map,
+          			icon: pinSymbol('red'),
+          			animation: google.maps.Animation.DROP,
+          			title: data.reports[i].travelCategory,
+        		});
+            } else {
+            	marker = new google.maps.Marker({
+          			position: { lat: latitude, lng: longitude },
+          			map,
+          			icon: pinSymbol('#8048dd'),
+          			animation: google.maps.Animation.DROP,
+          			title: data.reports[i].travelCategory,
+        		});
+            }
+        		marker.addListener("click", () => {
+          			infowindow.open(map, marker);
+        		});
+        	}
+        }).catch(err => {
+            console.error('Failed retrieving information', err);
+        });
+		}
+
+		function pinSymbol(color) {
+    return {
+        path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z',
+        fillColor: color,
+        fillOpacity: 1,
+        strokeColor: '#000',
+        strokeWeight: 1,
+        scale: 1,
+        labelOrigin: new google.maps.Point(0,-29)
+    };
+}
+    </script>
         <p style="text-align:right">MAPA EM REESTRUTURAÇÃO</p>
         <h3>
             Equipe do projeto
