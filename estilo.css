@@ -95,6 +95,11 @@ ul li:focus {
     display: block;
 }
 
+@media (max-width:576px) {
+    ul {
+        display: block;
+    }
+
 img {
     width: 100%;
     height: 30%;
