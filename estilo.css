@@ -2,8 +2,10 @@ body {
     color: black;
     background-color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-           
+    
 }
+
+
 
 .extensao img {
     width: 350px;
@@ -51,6 +53,7 @@ ul {
     margin-top: 0%;
     position: relative;
     
+    
 }
 
 a {
@@ -63,7 +66,7 @@ li ul {
     visibility: hidden;
     opacity: 0;
     min-width: 5rem;
-    position: absolute;
+    position:absolute;
     transition: all 0.5s ease;
     margin-top: 1rem;
     display: flex;
@@ -97,11 +100,14 @@ ul li:focus {
     display: block;
 }
 
+
 @media (max-width:576px) {
     ul {
         display: block;
-    }
 
+    }
+    
+    }
 img {
     width: 100%;
     height: 30%;
@@ -149,6 +155,4 @@ footer {
     margin-inline-end: 0%;
            
      }
-    
-    
     
