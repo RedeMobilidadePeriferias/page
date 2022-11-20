@@ -63,6 +63,7 @@ ul {
 a {
     color: white;
     text-decoration: none;
+    display: block;
 }
 
 li ul {
