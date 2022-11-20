@@ -2,7 +2,8 @@ body {
     color: black;
     background-color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
+    width: 100%;
+       
 }
 
 .extensao img {
@@ -40,7 +41,6 @@ margin-left:  20px;
 }
 
 ul {
-    width: 100%;
     display: flex;
     justify-content: space-around;
     list-style-type: none;
