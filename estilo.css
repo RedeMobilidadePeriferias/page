@@ -4,6 +4,10 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
        
 }
+nav {
+display:block;
+}
+   
 
 .extensao img {
     width: 350px;
