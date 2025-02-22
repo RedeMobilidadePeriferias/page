@@ -1,36 +1,47 @@
-import random
-import time
-
-def apresentacao():
-    print("Olá! Eu sou seu assistente virtual.")
-    time.sleep(1)
-    print("Vamos jogar um jogo de adivinhação!")
-
-def jogo():
-    numero_secreto = random.randint(1, 100)
-    tentativas = 0
-    print("Tente adivinhar o número entre 1 e 100.")
-
-    while True:
-        tentativa = int(input("Digite seu palpite: "))
-        tentativas += 1
-
-        if tentativa < numero_secreto:
-            print("Muito baixo! Tente novamente.")
-        elif tentativa > numero_secreto:
-            print("Muito alto! Tente novamente.")
-        else:
-            print(f"Parabéns! Você acertou o número {numero_secreto} em {tentativas} tentativas.")
-            break
-
-def main():
-    apresentacao()
-    while True:
-        jogo()
-        jogar_novamente = input("Quer jogar novamente? (s/n): ").strip().lower()
-        if jogar_novamente != 's':
-            print("Obrigado por jogar! Até a próxima.")
-            break
-
-if __name__ == "__main__":
-    main()
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Meu Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="post">
+            <h2>Primeira Postagem</h2>
+            <p>Este é o conteúdo da primeira postagem no blog.</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/VÍDEO_ID" frameborder="0" allowfullscreen></iframe>
+        </section>
+        
+        <section class="post">
+            <h2>Segunda Postagem</h2>
+            <p>Outra postagem interessante com uma imagem.</p>
+            <img src="imagem.jpg" alt="Descrição da imagem">
+        </section>
+        
+        <section class="post">
+            <h2>Links Interessantes</h2>
+            <ul>
+                <li><a href="https://exemplo.com" target="_blank">Visite este site</a></li>
+                <li><a href="https://outroexemplo.com" target="_blank">Outro link útil</a></li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Meu Blog. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
