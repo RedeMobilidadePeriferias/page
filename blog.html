@@ -1,74 +1,36 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redemopes</title>
-    <link rel="stylesheet" href="estilo.css">
-</head>
+import random
+import time
 
-<body>
-    <nav>
-        <ul>
-            <li>
-                <a href="index.html">Apresentação</a>
-            </li>
-            <li>
-                <a href="projetos.html">Projetos</a>
-                <ul>
-                    <li><a href="extensao.html">Extensão</a></li>
-                    <li><a href="grupoestudos.html">Grupo de estudos</a></li>
-                    <li><a href="pontopartida.html">Podcast Ponto de Partida</a></li>
-                    <li><a href="sufoco.html">App Sufoco</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="pesquisas.html">Pesquisas</a>
-                <ul>
-                    <li><a href="linhaspesquisa.html">Linhas de pesquisa</a></li>
-                    <li><a href="publicacao.html">Publicações</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="blog.html">Blog</a>
-            </li>
-            <li>
-                <a href="equipe.html">Equipe</a>
-            </li>
-            <li>
-                <a href="contato.html">Contato</a>
-            </li>
-        </ul>
-    </nav>
-    <header>
-        <img src="./imag/Blog.png">
-        
-        <h2>blog e notícias</h2>
-        <br>
-        <div class="extensao">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/lD0CCtw8bzQ" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-            <p>Contribuição na matéria do jornalista Luís Nascimento, TV Estadão Explica, sobre os "Distritos de São Paulo"; "Porque os ônibus de São Paulo têm cores diferentes?".</p>
-            <a style="color:blue" href="https://youtu.be/lD0CCtw8bzQ" target="_blank" rel="noopener noreferrer">Acesse a matéria</a>
-        </div>
-        
-        <div class="extensao">
-            <img src="./imag/Cad_Urb.jpg">
-            <p>Divulgamos os Cadernos de Estudos Urbanos, com os trabalhos completos apresentados nas sessões temáticas do Seminário Internacional de Estudos Urbanos e Interdisciplinaridade.</p>
-            <a style="color:blue" href="https://www.unifesp.br/campus/zonaleste/pesquisa/pesquisa-titulo/publicacoes/cadernos-de-estudos-urbanos/volumes" target="_blank" rel="noopener noreferrer">Baixe os artigos</a>
-        </div>
-        
-        <div class="extensao">
-            <img src="./imag/MR_MobDes.jpg">
-            <p><b>Mesa Redonda: Mobilidade Desiguais</b></p>
-            <a style="color:blue" href="https://doity.com.br/estudosurbanoseinterdisciplinaridade/programacao" target="_blank" rel="noopener noreferrer">Confira a programação</a>
-        </div>
-        
-        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fredemopes%2Fposts%2Fpfbid0e1K6UH8oAtf3B7EF9zKwxFhBcdAm286dX3nPbQ6GwfkxgSgmVDTNUxmgtRoPh1Ftl&show_text=true&width=500" width="500" height="526" style="border:none;overflow:hidden" frameborder="0" allowfullscreen></iframe>
-    </header>
+def apresentacao():
+    print("Olá! Eu sou seu assistente virtual.")
+    time.sleep(1)
+    print("Vamos jogar um jogo de adivinhação!")
 
-<footer>
-    <img src="./imag/logo_transp_ufp.png">
-</footer>
-</body>
-</html>
+def jogo():
+    numero_secreto = random.randint(1, 100)
+    tentativas = 0
+    print("Tente adivinhar o número entre 1 e 100.")
+
+    while True:
+        tentativa = int(input("Digite seu palpite: "))
+        tentativas += 1
+
+        if tentativa < numero_secreto:
+            print("Muito baixo! Tente novamente.")
+        elif tentativa > numero_secreto:
+            print("Muito alto! Tente novamente.")
+        else:
+            print(f"Parabéns! Você acertou o número {numero_secreto} em {tentativas} tentativas.")
+            break
+
+def main():
+    apresentacao()
+    while True:
+        jogo()
+        jogar_novamente = input("Quer jogar novamente? (s/n): ").strip().lower()
+        if jogar_novamente != 's':
+            print("Obrigado por jogar! Até a próxima.")
+            break
+
+if __name__ == "__main__":
+    main()
